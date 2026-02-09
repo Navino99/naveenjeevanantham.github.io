@@ -1,18 +1,18 @@
-cd /path/to/your/portfolio
+# Clone this directory
+cd /path/to/your/files
 
-# Initialize git repository
+# Initialize git
 git init
 
-# Add all files
+# Add files
 git add .
 
-# Commit files
-git commit -m "Initial portfolio website"
+# Commit
+git commit -m "Launch brutalist portfolio"
 
-# Add remote repository
+# Add remote
 git remote add origin https://github.com/naveenjeevanantham/naveenjeevanantham.github.io.git
 
 # Push to GitHub
 git branch -M main
 git push -u origin main
-```
