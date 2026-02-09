@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naveen Jeevanantham | Cybersecurity Engineer & GRC Specialist</title>
+    <meta name="description" content="ISO/IEC 27001:2022 Lead Auditor specializing in enterprise ISMS implementation, cloud security, and multi-framework compliance.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cyber-primary: #00ff88;
+            --cyber-secondary: #0a84ff;
+            --cyber-accent: #ff0055;
+            --bg-dark: #0a0e27;
+            --bg-darker: #050816;
+            --bg-card: #131836;
+            --text-primary: #e8ecf4;
+            --text-secondary: #8b92a8;
+            --border-color: #1e2442;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            background: var(--bg-darker);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Background Effects */
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 136, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 136, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .bg-gradient {
+            position: fixed;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 120%;
+            background: radial-gradient(circle, rgba(0, 255, 136, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(-50px, 100px) rotate(120deg); }
+            66% { transform: translate(50px, -50px) rotate(240deg); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header */
+        header {
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--border-color);
+            backdrop-filter: blur(10px);
+            background: rgba(5, 8, 22, 0.8);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--cyber-primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--cyber-primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--cyber-primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 0 6rem;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            border-radius: 50px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--cyber-primary);
+            margin-bottom: 2rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.4); }
+            50% { box-shadow: 0 0 0 8px rgba(0, 255, 136, 0); }
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--cyber-primary);
+            border-radius: 50%;
+            animation: blink 1.5s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--cyber-primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero h2 {
+            font-size: 1.8rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-bottom: 2rem;
+            line-height: 1.4;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--cyber-primary);
+            color: var(--bg-darker);
+            border: 2px solid var(--cyber-primary);
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.3s ease;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--cyber-primary);
+            background: rgba(0, 255, 136, 0.05);
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 6rem 0;
+        }
+
+        .stat-card {
+            padding: 2rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--cyber-primary), var(--cyber-secondary));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--cyber-primary);
+            box-shadow: 0 10px 40px rgba(0, 255, 136, 0.1);
+        }
+
+        .stat-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--cyber-primary);
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 0;
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--cyber-primary);
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+        }
+
+        /* Experience Cards */
+        .experience-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .experience-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 0;
+            background: var(--cyber-primary);
+            transition: height 0.3s ease;
+            border-radius: 12px 0 0 12px;
+        }
+
+        .experience-card:hover {
+            border-color: var(--cyber-primary);
+            transform: translateX(5px);
+        }
+
+        .experience-card:hover::before {
+            height: 100%;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .job-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .company {
+            color: var(--cyber-primary);
+            font-weight: 600;
+        }
+
+        .job-period {
+            font-family: 'IBM Plex Mono', monospace;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .achievements {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .achievements li {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .achievements li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--cyber-primary);
+            font-size: 1.2rem;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            border-color: var(--cyber-primary);
+            box-shadow: 0 10px 40px rgba(0, 255, 136, 0.1);
+        }
+
+        .skill-category h3 {
+            color: var(--cyber-primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            padding: 0.5rem 1rem;
+            background: rgba(0, 255, 136, 0.05);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: rgba(0, 255, 136, 0.1);
+            border-color: var(--cyber-primary);
+            color: var(--text-primary);
+            transform: translateY(-2px);
+        }
+
+        /* Certifications */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .cert-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cert-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(0, 255, 136, 0.1) 0%, transparent 70%);
+        }
+
+        .cert-card:hover {
+            border-color: var(--cyber-primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0, 255, 136, 0.15);
+        }
+
+        .cert-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 255, 136, 0.1);
+            border: 2px solid var(--cyber-primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cert-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .cert-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .contact-card:hover {
+            border-color: var(--cyber-primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0, 255, 136, 0.1);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-value {
+            color: var(--cyber-primary);
+            font-weight: 600;
+            word-break: break-all;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1.3rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .stats-grid,
+            .skills-grid,
+            .cert-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .job-header {
+                flex-direction: column;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Scroll Animations */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <div class="bg-gradient"></div>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">NJ</div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content fade-in">
+                    <div class="status-badge">
+                        <span class="status-dot"></span>
+                        Open to GRC & Security Compliance Roles
+                    </div>
+                    <h1>Naveen Jeevanantham</h1>
+                    <h2>Cybersecurity Engineer | GRC Specialist</h2>
+                    <p class="hero-description">
+                        ISO/IEC 27001:2022 Lead Auditor with proven track record implementing enterprise-grade ISMS in regulated healthcare SaaS environments. Specialized in translating complex regulatory requirements into actionable, scalable security controls across cloud infrastructure.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="#contact" class="btn btn-primary">Get In Touch →</a>
+                        <a href="https://linkedin.com/in/naveen-jeevanantham" target="_blank" class="btn btn-secondary">LinkedIn Profile</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card scroll-reveal">
+                        <div class="stat-number">93</div>
+                        <div class="stat-label">ISO 27001 Annex A Controls Implemented</div>
+                    </div>
+                    <div class="stat-card scroll-reveal">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Audit Finding Closure Rate</div>
+                    </div>
+                    <div class="stat-card scroll-reveal">
+                        <div class="stat-number">60%</div>
+                        <div class="stat-label">High-Risk Reduction Achieved</div>
+                    </div>
+                    <div class="stat-card scroll-reveal">
+                        <div class="stat-number">~61%</div>
+                        <div class="stat-label">Incident MTTR Improvement</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <div class="container">
+                <div class="section-header scroll-reveal">
+                    <h2 class="section-title">Professional Experience</h2>
+                    <p class="section-subtitle">Building robust security frameworks in regulated environments</p>
+                </div>
+
+                <div class="experience-card scroll-reveal">
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">Cybersecurity Engineer</h3>
+                            <div class="company">LYFnGO Technologies Pvt Ltd | Coimbatore, India</div>
+                        </div>
+                        <div class="job-period">Sept 2024 – Present</div>
+                    </div>
+                    <ul class="achievements">
+                        <li>Led end-to-end implementation of ISO/IEC 27001:2022 ISMS for a healthcare SaaS platform hosted on AWS, covering 93 Annex A controls across cloud infrastructure, operations, and governance</li>
+                        <li>Coordinated TÜV SÜD Stage 1 & Stage 2 certification audits, managing 1,200+ evidence artifacts and achieving 100% closure of 25 audit nonconformities within 16 weeks</li>
+                        <li>Developed core ISMS documentation including Statement of Applicability, risk assessment methodology, 12 security policies, and 25+ operational procedures aligned with ISO 27001:2022</li>
+                        <li>Conducted enterprise risk assessments for 35+ assets and vendor risk assessments for 12 third-party suppliers, reducing high-risk items by ~60% through defined treatment plans</li>
+                        <li>Implemented access governance processes including quarterly user access reviews across AWS, databases, and admin systems, remediating orphaned and excessive privileges</li>
+                        <li>Supported SOC 2 Type II and PCI-DSS v4.0 readiness by performing gap assessments and defining remediation roadmaps</li>
+                        <li>Managed security incidents (P2–P4), conducted root cause analysis, and improved incident response processes, reducing MTTR from ~72 hours to ~28 hours</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="container">
+                <div class="section-header scroll-reveal">
+                    <h2 class="section-title">Core Competencies</h2>
+                    <p class="section-subtitle">Multi-framework compliance expertise with cloud-native security focus</p>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-category scroll-reveal">
+                        <h3>// Compliance Frameworks</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">ISO/IEC 27001:2022</span>
+                            <span class="skill-tag">SOC 2 Type II</span>
+                            <span class="skill-tag">PCI-DSS v4.0</span>
+                            <span class="skill-tag">HIPAA</span>
+                            <span class="skill-tag">GDPR</span>
+                            <span class="skill-tag">DPDPA</span>
+                            <span class="skill-tag">PDPA</span>
+                            <span class="skill-tag">NIST CSF</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category scroll-reveal">
+                        <h3>// Cloud & Infrastructure</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">AWS (EC2, S3, RDS)</span>
+                            <span class="skill-tag">AWS VPC & IAM</span>
+                            <span class="skill-tag">AWS Config</span>
+                            <span class="skill-tag">Linux Administration</span>
+                            <span class="skill-tag">Network Security</span>
+                            <span class="skill-tag">VPN & Firewalls</span>
+                            <span class="skill-tag">TLS/AES Encryption</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category scroll-reveal">
+                        <h3>// Security Tools</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">AWS CloudWatch (SIEM)</span>
+                            <span class="skill-tag">OpenVAS</span>
+                            <span class="skill-tag">Wireshark</span>
+                            <span class="skill-tag">SonarQube</span>
+                            <span class="skill-tag">OWASP ZAP</span>
+                            <span class="skill-tag">Vanta</span>
+                            <span class="skill-tag">Drata</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category scroll-reveal">
+                        <h3>// GRC Capabilities</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">ISMS Implementation</span>
+                            <span class="skill-tag">Risk Assessment</span>
+                            <span class="skill-tag">Gap Analysis</span>
+                            <span class="skill-tag">Audit Management</span>
+                            <span class="skill-tag">Vendor Risk Mgmt</span>
+                            <span class="skill-tag">Access Governance</span>
+                            <span class="skill-tag">Incident Response</span>
+                            <span class="skill-tag">Policy Development</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <div class="container">
+                <div class="section-header scroll-reveal">
+                    <h2 class="section-title">Certifications</h2>
+                    <p class="section-subtitle">Professional credentials validating expertise in GRC and network security</p>
+                </div>
+
+                <div class="cert-grid">
+                    <div class="cert-card scroll-reveal">
+                        <div class="cert-icon">🛡️</div>
+                        <h3 class="cert-title">ISO/IEC 27001:2022 Lead Auditor</h3>
+                        <p class="cert-description">
+                            Qualified to conduct first-party, second-party, and third-party ISMS audits. Expertise in implementing and assessing information security management systems across diverse organizational contexts.
+                        </p>
+                    </div>
+
+                    <div class="cert-card scroll-reveal">
+                        <div class="cert-icon">🌐</div>
+                        <h3 class="cert-title">CCNA Certification</h3>
+                        <p class="cert-description">
+                            Comprehensive knowledge of networking fundamentals, routing and switching protocols, network security principles, and infrastructure troubleshooting.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <div class="section-header scroll-reveal">
+                    <h2 class="section-title">Let's Connect</h2>
+                    <p class="section-subtitle">Open to GRC Analyst and Security Compliance Engineer opportunities</p>
+                </div>
+
+                <div class="contact-grid">
+                    <a href="mailto:naveenjeeva99@gmail.com" class="contact-card scroll-reveal">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-label">Email</div>
+                        <div class="contact-value">naveenjeeva99@gmail.com</div>
+                    </a>
+
+                    <a href="tel:+917339194664" class="contact-card scroll-reveal">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-label">Phone</div>
+                        <div class="contact-value">+91 7339194664</div>
+                    </a>
+
+                    <a href="https://linkedin.com/in/naveen-jeevanantham" target="_blank" class="contact-card scroll-reveal">
+                        <div class="contact-icon">💼</div>
+                        <div class="contact-label">LinkedIn</div>
+                        <div class="contact-value">naveen-jeevanantham</div>
+                    </a>
+
+                    <div class="contact-card scroll-reveal">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-label">Location</div>
+                        <div class="contact-value">Coimbatore, Tamil Nadu, India</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Naveen Jeevanantham. Built with precision and purpose.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
